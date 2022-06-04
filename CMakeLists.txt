@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.23)
 
 project(jdup NONE)
 
-find_package(Java REQUIRED)
+find_package(Java 18 REQUIRED)
 include(UseJava)
 
 add_jar(

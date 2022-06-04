@@ -24,8 +24,11 @@ jobs:
       - name: Update git submodules
         run: git submodule update --init
 
-      - name: Install dependecies
-        run: sudo apt install default-jdk
+      - name: Set-up java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '18'
 
       - name: Run CMake
         run: cmake .
@@ -47,8 +50,11 @@ jobs:
       - name: Update git submodules
         run: git submodule update --init
 
-      - name: Install dependecies
-        run: brew install java
+      - name: Set-up java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '18'
 
       - name: Run CMake
         run: cmake .
@@ -70,8 +76,11 @@ jobs:
       - name: Update git submodules
         run: git submodule update --init
 
-      - name: Install dependecies
-        run: choco install java
+      - name: Set-up java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '18'
 
       - name: Run CMake
         run: cmake . -G"Unix Makefiles"
