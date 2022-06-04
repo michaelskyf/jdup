@@ -1,0 +1,80 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+    defaults:
+      run:
+        shell: bash
+
+jobs:
+  linux:
+    name: Build jdup for GNU/Linux
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout respository
+        uses: actions/checkout@v2
+
+      - name: Update git submodules
+        run: git submodule update --init
+
+      - name: Install dependecies
+        run: sudo apt install default-jdk
+
+      - name: Run CMake
+        run: cmake .
+
+      - name: Build the project
+        run: make
+
+  macos:
+    name: Build jdup for MacOS
+    runs-on: macos-latest
+
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout respository
+        uses: actions/checkout@v2
+
+      - name: Update git submodules
+        run: git submodule update --init
+
+      - name: Install dependecies
+        run: brew install java
+
+      - name: Run CMake
+        run: cmake .
+
+      - name: Build the project
+        run: make
+
+  windows:
+    name: Build jdup for Windows
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout respository
+        uses: actions/checkout@v2
+
+      - name: Update git submodules
+        run: git submodule update --init
+
+      - name: Install dependecies
+        run: choco install java
+
+      - name: Run CMake
+        run: cmake . -G"Unix Makefiles"
+
+      - name: Build the project
+        run: make
