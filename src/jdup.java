@@ -11,12 +11,14 @@ import java.text.DecimalFormat;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.ArrayList;
 import java.io.FileInputStream;
 
 class Global
 {
-	public static HashMap<Long, ArrayList<String>> map; /* Key: file size | Value: List of strings */
+	public static SortedMap<Long, ArrayList<String>> map; /* Key: file size | Value: List of strings */
 }
 
 class FileWalker
@@ -188,7 +190,7 @@ class Jdup
 		 */
 
 		/* Init Global */
-		Global.map = new HashMap<>();
+		Global.map = new TreeMap<Long, ArrayList<String>>();
 
 		/* Walk the file tree */
 		if(args.length != 0)
