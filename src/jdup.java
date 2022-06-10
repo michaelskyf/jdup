@@ -127,7 +127,7 @@ class Jdup
 		/* Steps:
 		 *
 		 * 1. Calculate hashes of each file in the hashmap's bucket
-		 * 2. If there are more than one hashes, print all of them
+		 * 2. If there is more than one hash, print all of them
 		 *
 		 */
 
