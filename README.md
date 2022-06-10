@@ -1,4 +1,4 @@
-[cdup](https://github.com/michaelskyf/cdup)
+[cscan](https://github.com/michaelskyf/cscan)
 
 # Cdup rewritten in Java
 
@@ -6,5 +6,5 @@
 ```
 cmake .
 make
-java -jar ./jdup.jar
+java -jar ./jscan.jar
 ```

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.23)
 
-project(jdup NONE)
+project(jscan NONE)
 
 find_package(Java 18 REQUIRED)
 include(UseJava)
@@ -8,7 +8,7 @@ include(UseJava)
 add_jar(
 	"${PROJECT_NAME}"
 	SOURCES
-	src/jdup.java
+	src/jscan.java
 	MANIFEST
 	src/manifest.mf
 	)
